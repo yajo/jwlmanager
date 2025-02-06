@@ -3371,7 +3371,8 @@ def read_resources(lng):
     favorites = pd.read_sql_query("SELECT * FROM Favorites;", con)
     con.close()
 
-if __name__ == "__main__":
+def main():
+    global app, lang, settings
     settings = set_settings_path()
     lang = get_language()
     read_resources(lang)
@@ -3388,3 +3389,6 @@ if __name__ == "__main__":
     win = Window(sys.argv[-1])
     win.show()
     sys.exit(app.exec())
+
+if __name__ == "__main__":
+    main()
